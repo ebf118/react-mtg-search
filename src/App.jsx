@@ -1,9 +1,12 @@
 import React from 'react'
 import Header from './components/Header.jsx'
+import CardDetail from './components/CardDetail.jsx'
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
 import { useTheme } from './hooks/UseTheme';
 import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 const lightTheme = createTheme({
   palette: {
@@ -38,6 +41,11 @@ function App() {
       <MUIThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <CssBaseline />
         <Header />
+        <Box sx={{ mt: 4 }}>  {/* Adding margin top spacing */}
+          <Container maxWidth="lg" sx={{justifyContent: 'center'}}>
+            <CardDetail />
+          </Container>
+        </Box>
       </MUIThemeProvider>
   )
 
